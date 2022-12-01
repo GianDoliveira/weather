@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './App.css';
-import axios from 'axios';
 import {BsFillDropletFill} from 'react-icons/bs'
 import {SiWindicss} from 'react-icons/si'
 
@@ -15,11 +14,13 @@ export default function App() {
 
   const search = (e) => {
     if (e.key === 'Enter') {
-      axios.get(urlWeather)
-        .then((response) => {
-          setData(response.data)
-        })
-      setLocal('')
+      fetch(urlWeather)
+      .then((res) => res.json())
+      .then((result) =>{
+        setLocal(result)
+        setData('')
+        console.log(result)
+      })  
     }
   }
   return (
@@ -36,7 +37,7 @@ export default function App() {
 
       <div className='container'>
         <div className='city'>
-          Rio de janeiro, BR
+          {data.name}
         </div>
         <div className='temperature'>
           15°C
