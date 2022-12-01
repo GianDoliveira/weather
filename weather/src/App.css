@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.app {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: rgba(192, 192, 192, 0.486);
+    color: #fff;
+  }
+  
+  .app:before {
+    content: "";
+    background: url("./assets/gradient-mountain-landscape_23-2149162009.webp") no-repeat center center/cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .app .search {
+    text-align: center;
+    padding: 1rem;
+  }
+  input {
+    width: 50%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.781);
+    font-size: 1em;
+    color: black;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.596);
+  }
+  input::placeholder {
+    font-size: 1rem;
+    margin: 1rem;
+    color: black;
+  }
+
+  .container {
+    margin-top: 3rem;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 700;
+  }
+
+  .city {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+    font-weight: 700;
+    text-shadow: 2px 2px black;
+  }
+
+  .temperature {
+    text-align: center;
+    padding-top: 1.5rem;
+    width: 270px;
+    height: 200px;
+    font-size: 7rem;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.137);
+    text-shadow: 2px 2px black;
+  }
+
+  .weather {
+    font-size: 2rem;
+    margin-top: 2rem;
+    font-style: italic;
+    font-weight: 700;
+    text-shadow: 2px 2px black;
+  }
