@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import './App.css';
-import {BsFillDropletFill} from 'react-icons/bs'
-import {SiWindicss} from 'react-icons/si'
+import axios from 'axios';
+import { BsFillDropletFill } from 'react-icons/bs'
+import { SiWindicss } from 'react-icons/si'
 
 
 export default function App() {
@@ -14,13 +15,12 @@ export default function App() {
 
   const search = (e) => {
     if (e.key === 'Enter') {
-      fetch(urlWeather)
-      .then((res) => res.json())
-      .then((result) =>{
-        setLocal(result)
-        setData('')
-        console.log(result)
-      })  
+      axios.get(urlWeather)
+        .then((response) => {
+          setData(response.data)
+          console.log(response.data)
+        })
+      setLocal('')
     }
   }
   return (
@@ -34,26 +34,30 @@ export default function App() {
           placeholder='Pesquisar'
         />
       </div>
-
+      {data.name !== undefined &&
       <div className='container'>
         <div className='city'>
-          {data.name}
+          {data.main ? <p>{data.name}, {data.sys.country}</p> : null}
         </div>
         <div className='temperature'>
-          15°C
+          {data.main ? <p>{Math.round(data.main.temp)}°C</p> : null}
         </div>
-        <div className='weather'>Clounds</div>
+        <div className='weather'>
+        {data.weather ? <p>{data.weather[0].description}</p> : null}
+        </div>
         <div className='details'>
-          <p className='humidity'>
-            <i><BsFillDropletFill/></i>
-            <span>90%</span>
-          </p>
-          <p className='wind'>
-            <i><SiWindicss/></i>
-            <span>9km/h</span>
-          </p>
+          <div className='humidity'>
+            <i><BsFillDropletFill /></i>
+            <span>{data.main ? <p>{data.main.humidity}% </p> : null}</span>
+          </div>
+          <div className='wind'>
+            <i><SiWindicss /></i>
+            <span>{data.wind ? <p>{Math.round(data.wind.speed.toFixed())}Km/h</p> : null}</span>
+          </div>
         </div>
       </div>
+      }
+
     </div>
   );
 }
