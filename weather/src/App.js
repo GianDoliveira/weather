@@ -10,7 +10,7 @@ export default function App() {
   const [data, setData] = useState({})
   const [local, setLocal] = useState('')
 
-  const urlWeather = `https://api.openweathermap.org/data/2.5/weather?q=${local}&units=metric&lang=pt_br&appid=b02166061d90cfd41cfa2444a6be2809`;
+  const urlWeather = `https://api.openweathermap.org/data/2.5/weather?q=${local}&units=metric&lang=pt_br&appid=COLOQUE-A-CHAVE-AQUI`;
 
 
   const search = (e) => {
