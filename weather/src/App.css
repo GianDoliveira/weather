@@ -8,14 +8,13 @@
 .app {
     width: 100%;
     height: 100vh;
-    position: relative;
-    background-color: rgba(192, 192, 192, 0.486);
+    background-color: rgba(192, 192, 192, 0.507);
     color: #fff;
   }
   
   .app:before {
     content: "";
-    background: url("./assets/gradient-mountain-landscape_23-2149162009.webp") no-repeat center center/cover;
+    background: url("./assets/148119-nature-landscape-mountains-trees-forest-snow-snowy-mountain-blue-color-correction.jpg") no-repeat center center/cover;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -52,6 +51,7 @@
     align-items: center;
     flex-direction: column;
     font-weight: 700;
+
   }
 
   .city {
@@ -71,6 +71,7 @@
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.137);
     text-shadow: 2px 2px black;
+    box-shadow: 0 5px 5px 0 black;
   }
 
   .weather {

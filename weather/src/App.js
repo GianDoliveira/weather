@@ -23,8 +23,9 @@ export default function App() {
       setLocal('')
     }
   }
+  
   return (
-    <div className='app'>
+    <div className="app">
       <div className="search">
         <input
           value={local}
@@ -34,7 +35,7 @@ export default function App() {
           placeholder='Pesquisar'
         />
       </div>
-      {data.name !== undefined &&
+      {data.name !== undefined && 
       <div className='container'>
         <div className='city'>
           {data.main ? <p>{data.name}, {data.sys.country}</p> : null}
