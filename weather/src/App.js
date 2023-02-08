@@ -18,7 +18,6 @@ export default function App() {
       axios.get(urlWeather)
         .then((response) => {
           setData(response.data)
-          console.log(response.data)
         })
       setLocal('')
     }
