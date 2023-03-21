@@ -105,8 +105,13 @@
     }
     .container {
       display: flex;
-      margin-top: 0; 
-      margin: 1em;
+      margin-top: 0.9em; 
       flex-direction: row;
+    }
+    .city {
+      margin: 1em;
+    }
+    .weather {
+      margin: 0.3em;
     }
   }
