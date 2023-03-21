@@ -97,3 +97,21 @@
   .details, .wind, .humidity {
     padding: 0.3rem;
   }
+
+  @media (max-height: 400px) and (orientation: landscape) {
+    .app {
+      height: 100%;  
+      background-color: transparent;    
+    }
+    .container {
+      display: flex;
+      margin-top: 0; 
+      flex-direction: row;
+    }
+    .city {
+      margin: 1em;
+    }
+    .weather {
+      margin: 0.3em;
+    }
+  }
